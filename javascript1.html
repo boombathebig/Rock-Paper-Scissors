@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <link href="StyleSheet.css" rel="stylesheet"
+  <meta charset="UTF-8"/>
+</head>
+
+<body> 
+  <h1> Let's Play Rock, Paper, Scissors</h1>
+  <div class="hands">
+  <img src=Rock.png alt="gloved hand showing rock" style="width:200px; height:200px;">
+  <img src=Paper.png alt="gloved-hand showing paper"style="width:200px; height:200px;">
+  <img src=Scissors.png alt= "gloved hand showing Scissors" style="width:200px; height:200px;">
+</div>
+<p class="normal"> Click Rock, Paper, or Scissors above to try!</p>
+
+  <div class="row">
+      <div class="column">
+          <h2>You</h2>
+          <p>Data..</p>
+      </div>
+      <div class="column">
+          <h2>Computer</h2>
+          <p>Data..</p>
+      </div>
+  </div>
+
+
+
+  <script>
+      // computer's pick rock/paper/scissors
+      function computerPlay(){
+        let choicesComputer = ['Rock', 'Paper', 'Scissors']; // array declaring choices
+         let randomValue= choicesComputer[Math.floor(Math.random() * choicesComputer.length)]; // select a random selection from choices array 
+        console.log(randomValue) // prints a test output in the console
+      }
+      const computerSelection= computerPlay()
+      const playerSelect= choicesPlayer
+ 
+   
+	
+
+ 
+
+       
+  
+  </script>
+</body>
+</html>

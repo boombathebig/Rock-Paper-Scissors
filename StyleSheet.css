@@ -1,0 +1,84 @@
+
+  h1  {
+    color: rgb(255, 255, 255);
+    margin-bottom: .3em;
+    text-align: center;
+    
+  }
+  
+  table {
+    margin: .3em;
+    width: 290px;
+  }
+  
+  th {
+    padding: .2em;
+  }
+  
+  td {
+    background-color: #ffc;
+    border: 1px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  
+  #trHeader {
+    color: #900;
+    text-decoration: underline;
+  }
+  
+  .centerCell {
+    text-align: center;
+  }
+
+  body
+   {background-color:rgb(27, 27, 39);
+  }
+
+  .form{
+    margin: 0 auto;
+    width: 300px;
+    padding-top: 50px;
+  }
+  .form label{
+    display: inline-block;
+    text-align: right;
+    float: left;
+    color: rgb(255, 255, 255);
+  }
+
+  .form input{
+		display: inline-block;
+		text-align: left;
+    float: right;
+  }
+  .button1{
+    margin: 0 auto;
+    width: 300px;
+    padding-top: 50px;
+  }
+  .hands{
+    padding: top 100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+  }
+  .normal{
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    text-align: center;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    text-align: center;
+    color:white;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    color: white;
+    }
