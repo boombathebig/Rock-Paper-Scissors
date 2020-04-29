@@ -9,23 +9,25 @@
 <body> 
   <h1> Let's Play Rock, Paper, Scissors</h1>
   <div class="hands">
-  <img src=Rock.png alt="gloved hand showing rock" style="width:200px; height:200px;">
-  <img src=Paper.png alt="gloved-hand showing paper"style="width:200px; height:200px;">
-  <img src=Scissors.png alt= "gloved hand showing Scissors" style="width:200px; height:200px;">
+  <img  src=Rock.png id="rockpic" alt="gloved hand showing rock" style="width:200px; width:200px;">
+  <img src=Paper.png id="paperpic" alt="gloved-hand showing paper"style="width:200px; height:200px;">
+  <img src=Scissors.png id="scissorpic" alt= "gloved hand showing Scissors" style="width:200px; height:200px;">
 </div>
 <p class="normal"> Click Rock, Paper, or Scissors above to try!</p>
 
   <div class="row">
       <div class="column">
           <h2>You</h2>
-          <p>Data..</p>
+          <p id="youChoice"></p>
       </div>
       <div class="column">
           <h2>Computer</h2>
-          <p>Data..</p>
+          <p id="comChoice">Data..</p>
       </div>
   </div>
-
+<div class="results">
+  <p id="resultBlock">Who Will Win?!</p>
+</div>
 
 
   <script>
@@ -33,18 +35,113 @@
       function computerPlay(){
         let choicesComputer = ['Rock', 'Paper', 'Scissors']; // array declaring choices
          let randomValue= choicesComputer[Math.floor(Math.random() * choicesComputer.length)]; // select a random selection from choices array 
-        console.log(randomValue) // prints a test output in the console
-      }
-      const computerSelection= computerPlay()
-      const playerSelect= choicesPlayer
- 
-   
+         let computerChoice=(randomValue);
+         
+      }   
+      
+      //function for clicking on the rock 
+      document.getElementById("rockpic").addEventListener('click',function(){
+        document.getElementById("youChoice"), rockClick();})
+      
+            //function for clicking on the paper 
+      document.getElementById("paperpic").addEventListener('click',function(){
+        document.getElementById("youChoice"), paperClick();})
+
+     //function for clicking on the Scissors 
+      document.getElementById("scissorpic").addEventListener('click',function(){
+        document.getElementById("youChoice"), ScissorClick();})
 	
-
- 
-
-       
   
+        function rockClick(){
+        document.getElementById("youChoice").innerHTML = "ROCK!";
+        let playerChoice= "1"
+         let choicesComputer = ['Rock', 'Paper', 'Scissors']; // array declaring choices
+         let randomValue= choicesComputer[Math.floor(Math.random() * choicesComputer.length)]; // select a random selection from choices array 
+         let computerChoice=(randomValue);
+         console.log(randomValue)
+          if (computerChoice=="Rock"){
+            rockTie();
+                   }
+          else if (computerChoice=="Scissors"){
+            rockWin();
+          }
+          else if(computerChoice=="Paper"){
+            rockLose();
+          }
+        }
+ 
+        function ScissorClick(){
+        document.getElementById("youChoice").innerHTML = "SCISSOR!";
+        let playerChoice= "2"
+        let choicesComputer = ['Rock', 'Paper', 'Scissors']; // array declaring choices
+         let randomValue= choicesComputer[Math.floor(Math.random() * choicesComputer.length)]; // select a random selection from choices array 
+         let computerChoice=(randomValue);
+         console.log(randomValue)
+         if (computerChoice=="Rock"){
+            scissorLose();
+                   }
+          else if (computerChoice=="Scissors"){
+            scissorTie();
+          }
+          else if(computerChoice=="Paper"){
+            scissorWin();
+          }
+        }
+
+        function paperClick(){
+        document.getElementById("youChoice").innerHTML = "PAPER!";
+        let playerChoice= "3"
+        let choicesComputer = ['Rock', 'Paper', 'Scissors']; // array declaring choices
+         let randomValue= choicesComputer[Math.floor(Math.random() * choicesComputer.length)]; // select a random selection from choices array 
+         let computerChoice=(randomValue);
+         if (computerChoice=="Rock"){
+             paperWin();
+                   }
+          else if (computerChoice=="Scissors"){
+            paperLose();
+          }
+          else if(computerChoice=="Paper"){
+            paperTie();
+          }
+        }
+       
+       function rockTie(){
+        document.getElementById("comChoice").innerHTML= "Rock!";
+        document.getElementById("resultBlock").innerHTML= "It's a Tie :/";
+       }
+  function rockLose(){
+    document.getElementById("comChoice").innerHTML= "Paper!";
+        document.getElementById("resultBlock").innerHTML= "You lose, sucks to suck.";
+  }
+  function rockWin(){
+    document.getElementById("comChoice").innerHTML= "Scissors!";
+        document.getElementById("resultBlock").innerHTML= "You Win, Winner Winner, Chicken Dinner!.";
+  }
+
+  function paperTie(){
+        document.getElementById("comChoice").innerHTML= "Paper!";
+        document.getElementById("resultBlock").innerHTML= "It's a Tie :/";
+       }
+  function paperLose(){
+    document.getElementById("comChoice").innerHTML= "Scissors!";
+        document.getElementById("resultBlock").innerHTML= "You lose, sucks to suck.";
+  }
+  function paperWin(){
+    document.getElementById("comChoice").innerHTML= "Rock!";
+        document.getElementById("resultBlock").innerHTML= "You Win, Winner Winner, Chicken Dinner!.";
+  }
+  function scissorTie(){
+        document.getElementById("comChoice").innerHTML= "Scissors!";
+        document.getElementById("resultBlock").innerHTML= "It's a Tie :/";
+       }
+  function scissorLose(){
+    document.getElementById("comChoice").innerHTML= "Rock!";
+        document.getElementById("resultBlock").innerHTML= "You lose, sucks to suck.";
+  }
+  function scissorWin(){
+    document.getElementById("comChoice").innerHTML= "Paper!";
+        document.getElementById("resultBlock").innerHTML= "You Win, Winner Winner, Chicken Dinner!.";
+  }
   </script>
 </body>
 </html>
